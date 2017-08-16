@@ -7,6 +7,7 @@ var Place = require("./models").Place;
 var Hotel = require("./models").Hotel;
 var Restaurant = require("./models").Restaurant;
 var Activity = require("./models").Activity;
+var Itinerary = require('./models').Itinerary;
 
 var data = {
   hotel: [
@@ -540,6 +541,31 @@ var data = {
       age_range: "All"
     }
   ]
+  // itinerary: [
+  //   {
+  //     id: 2,
+
+  //   }
+  // ]
+  // ],
+  // itinerary_activity: [
+  //   {
+  //     itieraryId: 2,
+  //     activityId: 4
+  //   }
+  // ],
+  // itinerary_hotel: [
+  //   {
+  //     itieraryId: 2,
+  //     hotelId: 1
+  //   }
+  // ],
+  // itinerary_restaurant: [
+  //   {
+  //     itieraryId: 2,
+  //     restaurantId: 1
+  //   }
+  // ]
 };
 
 db

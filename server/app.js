@@ -26,12 +26,11 @@ app.use(function(req, res, next) {
 });
 
 // handle any errors
+// handle any errors
 app.use(function(err, req, res, next) {
   console.error(err, err.stack);
   res.status(err.status || 500);
-  res.render("error", {
-    error: err
-  });
+  res.send("error: " + err);
 });
 
 // listen on a port

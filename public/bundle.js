@@ -663,6 +663,25 @@ function removeAttractionFromDOM(category, attractionData) {
   map.flyTo({ center: [-74.0, 40.731], zoom: 12.3 });
 }
 
+// Hash
+if (location.hash.includes('#')) {
+  itineraryId = location.hash.slice(1);
+  fetch(`http://localhost:3000/api/itineraries/${itineraryId}`)
+    .then(response => response.json())
+    .then(data => {
+      data.itinerary.hotels.forEach((hotel) => {
+        buildAttractionAssets('hotels', attractions.find('hotels', hotel.id));
+        });
+      data.itinerary.activities.forEach((activity) => {
+        buildAttractionAssets('activities', attractions.find('activities', activity.id));
+        });
+      data.itinerary.hotels.forEach((restaurant) => {
+        buildAttractionAssets('restaurants', attractions.find('restaurants', restaurant.id));
+        });
+      })
+    .catch(console.error);
+}
+
 
 /***/ }),
 /* 3 */
